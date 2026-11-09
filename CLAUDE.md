@@ -29,6 +29,14 @@ units created 9 Nov 2026; app "Requires review" until the Play listing is linked
 Banner under the app list only; interstitial after a batch uninstall report, 5 minutes apart; never on the detail
 screen. UMP consent before the SDK starts. `bash scripts/check-release-ad-ids.sh` must pass before a release build.
 
+## Release
+- Upload key `.secrets/appmanager-upload.keystore` (gitignored; `android/key.properties` points at it). Release
+  builds are unsigned without it, never debug-signed.
+- Build: `jobq run --name appmanager-release-aab -- bash -c 'flutter build appbundle --release --obfuscate
+  --split-debug-info=build/symbols && cd android && ./gradlew --stop'`, then copy the bundle and zipped symbols to
+  `releases/v<version>-<build>/` (gitignored). Bump `version:` in pubspec before every new upload.
+- Play Console notes (listing, declarations, Data safety): `docs/play-store.md`. Icon source `assets/branding/`.
+
 ## Gate before commit
 ```
 dart format --set-exit-if-changed lib test
