@@ -11,6 +11,7 @@ class AppTile extends StatelessWidget {
     required this.isSelected,
     required this.onTap,
     required this.onLongPress,
+    this.showCache = false,
     super.key,
   });
 
@@ -18,6 +19,9 @@ class AppTile extends StatelessWidget {
   final bool isSelected;
   final VoidCallback onTap;
   final VoidCallback onLongPress;
+
+  /// Show the cache size instead of the total (while the list is sorted by cache).
+  final bool showCache;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +44,9 @@ class AppTile extends StatelessWidget {
       trailing: size == null
           ? null
           : Text(
-              formatBytes(size.totalBytes, locale: locale),
+              showCache
+                  ? context.l10n.cacheValue(formatBytes(size.cacheBytes, locale: locale))
+                  : formatBytes(size.totalBytes, locale: locale),
               style: Theme.of(context).textTheme.labelLarge,
             ),
     );

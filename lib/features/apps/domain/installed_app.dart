@@ -95,6 +95,9 @@ final class AppStorageSize {
 
   int get totalBytes => appBytes + dataBytes;
 
+  /// User data not counting the cache, so app + user data + cache = total.
+  int get userDataBytes => dataBytes > cacheBytes ? dataBytes - cacheBytes : 0;
+
   @override
   bool operator ==(Object other) =>
       other is AppStorageSize &&

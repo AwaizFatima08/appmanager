@@ -78,17 +78,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noApps => 'No apps match.';
 
   @override
-  String get usageAccessTitle => 'See how much space each app uses';
+  String get usageAccessTitle => 'See each app\'s size';
 
   @override
-  String get usageAccessBody =>
-      'Android shows app sizes only after you allow Usage access for App Manager. App Manager reads sizes only; nothing leaves your phone.';
+  String get usageAccessBody => 'Allow Usage access. Sizes only; nothing leaves your phone.';
 
   @override
-  String get usageAccessButton => 'Allow usage access';
-
-  @override
-  String get usageAccessSteps => 'Find App Manager in the list and switch it on, then come back.';
+  String get usageAccessButton => 'Allow';
 
   @override
   String get settingsUnavailable => 'This phone did not open the settings screen.';
@@ -299,4 +295,9 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get aboutBody =>
       'App Manager by HomiLabs lists the apps on your phone with their size and permissions, and takes you straight to uninstalling them, clearing their cache or changing their permissions. Everything stays on your phone.';
+
+  @override
+  String cacheValue(String size) {
+    return '$size cache';
+  }
 }

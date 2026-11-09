@@ -7,14 +7,19 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/fake_platform.dart';
 
 void main() {
-  Future<FakePlatform> pump(WidgetTester tester, {bool access = true}) async {
+  Future<FakePlatform> pump(WidgetTester tester, {bool access = true, bool cache = false}) async {
     final platform = FakePlatform(
       apps: [
         fakeApp('com.a.alpha', label: 'Alpha'),
         fakeApp('com.b.beta', label: 'Beta'),
         fakeApp('android.sys', label: 'System UI', isSystem: true),
       ],
-      sizeMap: access ? {'com.a.alpha': fakeSize(2000000), 'com.b.beta': fakeSize(5000)} : null,
+      sizeMap: access
+          ? {
+              'com.a.alpha': fakeSize(2000000, cache: cache ? 300000 : 0),
+              'com.b.beta': fakeSize(5000),
+            }
+          : null,
     );
     await tester.pumpWidget(
       ProviderScope(
@@ -36,6 +41,16 @@ void main() {
     expect(find.textContaining('2 apps'), findsOneWidget);
   });
 
+  testWidgets("sorting by cache shows each app's cache", (tester) async {
+    await pump(tester, cache: true);
+    await tester.tap(find.byTooltip('Sort'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Most cache first'));
+    await tester.pumpAndSettle();
+    expect(find.text('300 KB cache'), findsOneWidget);
+    expect(find.text('2 MB'), findsNothing);
+  });
+
   testWidgets('search narrows the list', (tester) async {
     await pump(tester);
     await tester.enterText(find.byType(TextField), 'bet');
@@ -46,7 +61,7 @@ void main() {
 
   testWidgets('asks for usage access when sizes are missing', (tester) async {
     final platform = await pump(tester, access: false);
-    await tester.tap(find.text('Allow usage access'));
+    await tester.tap(find.text('Allow'));
     await tester.pumpAndSettle();
     expect(platform.opened, ['usage']);
   });

@@ -197,26 +197,20 @@ abstract class AppLocalizations {
   /// No description provided for @usageAccessTitle.
   ///
   /// In en, this message translates to:
-  /// **'See how much space each app uses'**
+  /// **'See each app\'s size'**
   String get usageAccessTitle;
 
   /// No description provided for @usageAccessBody.
   ///
   /// In en, this message translates to:
-  /// **'Android shows app sizes only after you allow Usage access for App Manager. App Manager reads sizes only; nothing leaves your phone.'**
+  /// **'Allow Usage access. Sizes only; nothing leaves your phone.'**
   String get usageAccessBody;
 
   /// No description provided for @usageAccessButton.
   ///
   /// In en, this message translates to:
-  /// **'Allow usage access'**
+  /// **'Allow'**
   String get usageAccessButton;
-
-  /// No description provided for @usageAccessSteps.
-  ///
-  /// In en, this message translates to:
-  /// **'Find App Manager in the list and switch it on, then come back.'**
-  String get usageAccessSteps;
 
   /// No description provided for @settingsUnavailable.
   ///
@@ -589,6 +583,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'App Manager by HomiLabs lists the apps on your phone with their size and permissions, and takes you straight to uninstalling them, clearing their cache or changing their permissions. Everything stays on your phone.'**
   String get aboutBody;
+
+  /// No description provided for @cacheValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{size} cache'**
+  String cacheValue(String size);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

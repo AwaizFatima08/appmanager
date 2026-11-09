@@ -16,20 +16,28 @@ class UsageAccessBanner extends ConsumerWidget {
       margin: const EdgeInsetsDirectional.fromSTEB(AppSpacing.md, AppSpacing.sm, AppSpacing.md, 0),
       color: theme.colorScheme.secondaryContainer,
       child: Padding(
-        padding: const EdgeInsetsDirectional.all(AppSpacing.md),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        padding: const EdgeInsetsDirectional.fromSTEB(
+          AppSpacing.md,
+          AppSpacing.sm,
+          AppSpacing.sm,
+          AppSpacing.sm,
+        ),
+        child: Row(
           children: [
-            Text(l10n.usageAccessTitle, style: theme.textTheme.titleMedium),
-            const SizedBox(height: AppSpacing.xs),
-            Text(l10n.usageAccessBody),
-            const SizedBox(height: AppSpacing.xs),
-            Text(l10n.usageAccessSteps, style: theme.textTheme.bodySmall),
-            const SizedBox(height: AppSpacing.sm),
-            FilledButton.icon(
+            const Icon(Icons.data_usage),
+            const SizedBox(width: AppSpacing.sm),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(l10n.usageAccessTitle, style: theme.textTheme.titleSmall),
+                  Text(l10n.usageAccessBody, style: theme.textTheme.bodySmall),
+                ],
+              ),
+            ),
+            TextButton(
               onPressed: () => openUsageAccess(context, ref),
-              icon: const Icon(Icons.data_usage),
-              label: Text(l10n.usageAccessButton),
+              child: Text(l10n.usageAccessButton),
             ),
           ],
         ),

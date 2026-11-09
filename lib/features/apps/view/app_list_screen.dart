@@ -67,6 +67,7 @@ class _AppList extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final selection = ref.watch(selectionProvider);
+    final showCache = ref.watch(appQueryProvider.select((q) => q.sort == AppSort.cacheSize));
     return RefreshIndicator(
       onRefresh: () => _refresh(ref),
       child: CustomScrollView(
@@ -89,6 +90,7 @@ class _AppList extends ConsumerWidget {
                   key: ValueKey(name),
                   entry: entry,
                   isSelected: selection.contains(name),
+                  showCache: showCache,
                   onLongPress: toggle,
                   onTap: selection.isEmpty ? () => unawaited(_openDetail(context, name)) : toggle,
                 );

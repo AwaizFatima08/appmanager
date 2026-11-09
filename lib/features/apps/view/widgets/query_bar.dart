@@ -37,33 +37,36 @@ class _QueryBarState extends ConsumerState<QueryBar> {
       padding: const EdgeInsetsDirectional.fromSTEB(AppSpacing.md, AppSpacing.sm, AppSpacing.md, 0),
       child: Column(
         children: [
-          TextField(
-            controller: _search,
-            onChanged: notifier.search,
-            textInputAction: TextInputAction.search,
-            decoration: InputDecoration(
-              hintText: l10n.searchHint,
-              prefixIcon: const Icon(Icons.search),
-              suffixIcon: query.search.isEmpty
-                  ? null
-                  : IconButton(
-                      tooltip: l10n.clearSearch,
-                      icon: const Icon(Icons.close),
-                      onPressed: _clear,
-                    ),
-              border: const OutlineInputBorder(),
-              isDense: true,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.sm),
           Row(
             children: [
               Expanded(
-                child: _ScopeSwitch(scope: query.scope, onChanged: notifier.scope),
+                child: TextField(
+                  controller: _search,
+                  onChanged: notifier.search,
+                  textInputAction: TextInputAction.search,
+                  decoration: InputDecoration(
+                    hintText: l10n.searchHint,
+                    prefixIcon: const Icon(Icons.search),
+                    suffixIcon: query.search.isEmpty
+                        ? null
+                        : IconButton(
+                            tooltip: l10n.clearSearch,
+                            icon: const Icon(Icons.close),
+                            onPressed: _clear,
+                          ),
+                    border: const OutlineInputBorder(),
+                    isDense: true,
+                  ),
+                ),
               ),
-              const SizedBox(width: AppSpacing.sm),
+              const SizedBox(width: AppSpacing.xs),
               _SortMenu(sort: query.sort, onChanged: notifier.sort),
             ],
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          SizedBox(
+            width: double.infinity,
+            child: _ScopeSwitch(scope: query.scope, onChanged: notifier.scope),
           ),
         ],
       ),

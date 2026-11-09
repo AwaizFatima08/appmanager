@@ -1,5 +1,6 @@
 import 'package:appmanager/features/apps/domain/app_permission.dart';
 import 'package:appmanager/features/apps/domain/app_query.dart';
+import 'package:appmanager/features/apps/domain/installed_app.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../support/fake_platform.dart';
@@ -46,6 +47,13 @@ void main() {
       final t = totalsOf(selectApps(apps, sizes, const AppQuery()));
       expect(t, (count: 3, totalBytes: 600, cacheBytes: 100));
     });
+  });
+
+  test('user data excludes the cache so the parts add up to the total', () {
+    const s = AppStorageSize(appBytes: 100, dataBytes: 50, cacheBytes: 50);
+    expect(s.userDataBytes, 0);
+    expect(s.appBytes + s.userDataBytes + s.cacheBytes, s.totalBytes);
+    expect(const AppStorageSize(appBytes: 0, dataBytes: 10, cacheBytes: 30).userDataBytes, 0);
   });
 
   test('a system app can be uninstalled only when it has updates', () {

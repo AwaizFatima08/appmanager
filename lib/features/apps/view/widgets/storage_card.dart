@@ -79,7 +79,7 @@ class _SizeTable extends StatelessWidget {
     return Column(
       children: [
         _SizeRow(label: l10n.storageApp, value: f(size.appBytes)),
-        _SizeRow(label: l10n.storageData, value: f(size.dataBytes)),
+        _SizeRow(label: l10n.storageData, value: f(size.userDataBytes)),
         _SizeRow(label: l10n.storageCache, value: f(size.cacheBytes), color: AppColors.amber),
         const Divider(),
         _SizeRow(label: l10n.storageTotal, value: f(size.totalBytes), style: bold),

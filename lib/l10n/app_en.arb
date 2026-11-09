@@ -2,7 +2,13 @@
   "@@locale": "en",
   "appTitle": "App Manager",
   "loadError": "Could not read the apps on this phone ({code}).",
-  "@loadError": {"placeholders": {"code": {"type": "String"}}},
+  "@loadError": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
   "retry": "Try again",
   "searchHint": "Search apps",
   "clearSearch": "Clear search",
@@ -16,37 +22,87 @@
   "sortRecentlyUpdated": "Recently updated",
   "sortNeedsAccess": "Sizes need usage access",
   "totalsLine": "{count, plural, =1{1 app} other{{count} apps}} · {total} · cache {cache}",
-  "@totalsLine": {"placeholders": {"count": {"type": "int"}, "total": {"type": "String"}, "cache": {"type": "String"}}},
+  "@totalsLine": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "String"
+      },
+      "cache": {
+        "type": "String"
+      }
+    }
+  },
   "totalsCountOnly": "{count, plural, =1{1 app} other{{count} apps}}",
-  "@totalsCountOnly": {"placeholders": {"count": {"type": "int"}}},
+  "@totalsCountOnly": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "noApps": "No apps match.",
-  "usageAccessTitle": "See how much space each app uses",
-  "usageAccessBody": "Android shows app sizes only after you allow Usage access for App Manager. App Manager reads sizes only; nothing leaves your phone.",
-  "usageAccessButton": "Allow usage access",
-  "usageAccessSteps": "Find App Manager in the list and switch it on, then come back.",
+  "usageAccessTitle": "See each app's size",
+  "usageAccessBody": "Allow Usage access. Sizes only; nothing leaves your phone.",
+  "usageAccessButton": "Allow",
   "settingsUnavailable": "This phone did not open the settings screen.",
   "badgeSystem": "System",
   "badgeDisabled": "Disabled",
   "versionLine": "Version {version}",
-  "@versionLine": {"placeholders": {"version": {"type": "String"}}},
+  "@versionLine": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
   "selectedCount": "{count} selected",
-  "@selectedCount": {"placeholders": {"count": {"type": "int"}}},
+  "@selectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "selectAll": "Select all shown",
   "cancelSelection": "Cancel selection",
   "uninstallSelected": "Uninstall selected",
   "batchConfirmTitle": "Uninstall {count, plural, =1{1 app} other{{count} apps}}?",
-  "@batchConfirmTitle": {"placeholders": {"count": {"type": "int"}}},
+  "@batchConfirmTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "batchConfirmBody": "Android asks you to confirm each app. System apps in the selection are skipped.",
   "batchConfirmGo": "Start",
   "cancel": "Cancel",
   "batchReport": "Uninstalled {removed} of {requested}.",
-  "@batchReport": {"placeholders": {"removed": {"type": "int"}, "requested": {"type": "int"}}},
+  "@batchReport": {
+    "placeholders": {
+      "removed": {
+        "type": "int"
+      },
+      "requested": {
+        "type": "int"
+      }
+    }
+  },
   "openApp": "Open",
   "uninstall": "Uninstall",
   "uninstallUpdates": "Remove updates",
   "appInfo": "App info",
   "uninstalled": "{label} was uninstalled.",
-  "@uninstalled": {"placeholders": {"label": {"type": "String"}}},
+  "@uninstalled": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
   "uninstallFailed": "Android could not start the uninstall.",
   "appGone": "This app is no longer installed.",
   "systemAppNote": "Built into the phone. It cannot be uninstalled, but you can disable it in App info.",
@@ -67,7 +123,13 @@
   "permissionsDenied": "Not allowed",
   "permissionsSpecial": "Special access",
   "permissionsFixed": "Granted at install ({count})",
-  "@permissionsFixed": {"placeholders": {"count": {"type": "int"}}},
+  "@permissionsFixed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "permissionsNone": "This app asks for no permissions.",
   "permissionsFixedNote": "Android grants these when the app is installed. They cannot be switched off.",
   "permissionsError": "Could not read this app's permissions.",
@@ -91,5 +153,13 @@
   "statusDisabled": "Disabled",
   "privacyChoices": "Privacy choices",
   "about": "About",
-  "aboutBody": "App Manager by HomiLabs lists the apps on your phone with their size and permissions, and takes you straight to uninstalling them, clearing their cache or changing their permissions. Everything stays on your phone."
+  "aboutBody": "App Manager by HomiLabs lists the apps on your phone with their size and permissions, and takes you straight to uninstalling them, clearing their cache or changing their permissions. Everything stays on your phone.",
+  "cacheValue": "{size} cache",
+  "@cacheValue": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  }
 }
