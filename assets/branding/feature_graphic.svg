@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 500" width="1024" height="500">
+  <rect width="1024" height="500" fill="#0E5E6F"/>
+  <g transform="translate(96 130) scale(1.25)">
+    <rect width="192" height="192" rx="42" fill="#0B4C5A"/>
+    <rect x="40" y="40" width="50" height="50" rx="12" fill="#FFFFFF"/>
+    <rect x="102" y="40" width="50" height="50" rx="12" fill="#FFFFFF"/>
+    <rect x="40" y="102" width="50" height="50" rx="12" fill="#FFFFFF"/>
+    <rect x="102" y="102" width="50" height="50" rx="12" fill="#F2A33A"/>
+    <rect x="114" y="124" width="26" height="6" rx="3" fill="#FFFFFF"/>
+  </g>
+  <text x="420" y="228" font-family="Lato" font-weight="900" font-size="72" fill="#FFFFFF">App Manager</text>
+  <text x="422" y="290" font-family="Lato" font-weight="500" font-size="32" fill="#D7ECEF">Every app's size and permissions.</text>
+  <text x="422" y="334" font-family="Lato" font-weight="500" font-size="32" fill="#D7ECEF">Uninstall and clean up in a tap.</text>
+</svg>

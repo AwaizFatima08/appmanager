@@ -35,7 +35,8 @@ screen. UMP consent before the SDK starts. `bash scripts/check-release-ad-ids.sh
 - Build: `jobq run --name appmanager-release-aab -- bash -c 'flutter build appbundle --release --obfuscate
   --split-debug-info=build/symbols && cd android && ./gradlew --stop'`, then copy the bundle and zipped symbols to
   `releases/v<version>-<build>/` (gitignored). Bump `version:` in pubspec before every new upload.
-- Play Console notes (listing, declarations, Data safety): `docs/play-store.md`. Icon source `assets/branding/`.
+- Play Console notes (listing, declarations, Data safety, status): `docs/play-store.md`. Icon source `assets/branding/`.
+- 1.0.0 (build 1) sent for Play review 9 Nov 2026. After approval: AdMob → App Manager → "Add store" to link the listing.
 
 ## Gate before commit
 ```

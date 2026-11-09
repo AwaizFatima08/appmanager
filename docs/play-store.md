@@ -8,7 +8,16 @@ Notes for the first upload. Package `com.homilabs.appmanager` (cannot change aft
   Downloads → upload as "native debug symbols" is not needed; keep it to de-obfuscate Dart traces with
   `flutter symbolize`).
 - Store icon: `store/play-icon-512.png` (512×512, from `assets/branding/icon_square.svg`).
-- Still needed: a feature graphic (1024×500) and 2–8 phone screenshots.
+- Feature graphic `store/feature-graphic.png` (from `assets/branding/feature_graphic.svg`); phone screenshots
+  `store/screenshots/` (1080×1920, 9:16 — Play rejects 1:2). QUERY_ALL_PACKAGES review video
+  `store/video/review.mp4`, hosted at https://tools.homilabs.org/appmanager/review.mp4 (uploaded by scp, not in the
+  homilabs_tools repo; keep it online while Play may re-review the declaration).
+
+## Status
+- 9 Nov 2026: Play app "App Manager: Size & Uninstall" created (organization account Homilabs, app id
+  4976197179365239109). All App content declarations, listing, store settings (Tools, homilabs.smc@gmail.com,
+  https://tools.homilabs.org) and the QUERY_ALL_PACKAGES declaration done. Production release 1 (1.0.0) in 178
+  countries sent for review; managed publishing off, so it goes live on approval.
 
 ## Signing
 - Upload key: `.secrets/appmanager-upload.keystore`, alias `appmanager-upload` (gitignored; password in
@@ -19,14 +28,14 @@ Notes for the first upload. Package `com.homilabs.appmanager` (cannot change aft
   `E5:27:7B:7D:1E:B7:A9:86:8C:B8:06:84:B4:81:68:27:1B:C7:75:80:A6:9E:3C:92:58:7F:D2:75:9B:D1:C6:F6`
 
 ## Listing
-- App name: App Manager
+- App name: App Manager: Size & Uninstall
 - Short description (≤80): See every app's size and permissions, then uninstall or clean up in a tap.
 - Full description:
 
   App Manager shows every app on your phone in one simple list, with how much space each one takes and which
   permissions it has.
 
-  • Sort apps by total size, cache, name or last update, and search by name.
+  • Sort apps by size, cache, name or last update, and search by name.
   • See each app's size split into app, user data and cache.
   • See which permissions an app has been allowed or denied.
   • Uninstall one app, or select several and uninstall them in one go. Android asks you to confirm each one.
@@ -47,7 +56,8 @@ Notes for the first upload. Package `com.homilabs.appmanager` (cannot change aft
 - **Usage access (PACKAGE_USAGE_STATS)**: no Play form; the app explains it in the banner before sending the user to
   settings, and uses it only for `StorageStatsManager` sizes.
 - **Target audience**: 18+ (not designed for children).
-- **Content rating**: utility; no violence, user content, gambling or location sharing.
+- **Content rating**: IARC "All other app types", every question "No" (no violence, user content, gambling or
+  location sharing) → Everyone / PEGI 3 / 3+.
 - **Data safety** (the app itself collects nothing; answers cover the AdMob SDK):
   - Data collected: Device or other IDs (advertising ID); App activity / app interactions; App info and
     performance (crash logs, diagnostics); Approximate location (from IP). Purpose: Advertising or marketing,
